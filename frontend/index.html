@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>User System</h1>
+
+    <!-- Mensagem de feedback -->
+    <div id="message"></div>
+
+    <!-- Formulário de Registro -->
+    <form id="registerForm">
+      <h2>Registre-se</h2>
+      <input type="text" id="registerUsername" placeholder="username" required>
+      <input type="password" id="registerPassword" placeholder="password" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Divisória visual -->
+    <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;">
+
+    <!-- Formulário de Login -->
+    <form id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Enter your username" required>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
