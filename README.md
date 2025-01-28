@@ -1,9 +1,4 @@
 
-Aqui está o conteúdo completo do README.md formatado para você copiar e colar:
-
-markdown
-Copiar
-Editar
 # Sistema de Gerenciamento de Usuários
 
 ## 📖 Introdução
