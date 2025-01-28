@@ -17,8 +17,15 @@
     <!-- Formulário de Registro -->
     <form id="registerForm">
       <h2>Registre-se</h2>
-      <input type="text" id="registerUsername" placeholder="username" required>
-      <input type="password" id="registerPassword" placeholder="password" required>
+      <input type="text" id="registerUsername" placeholder="Username" required>
+      
+      <input type="password" id="registerPassword" placeholder="Password" required>
+      <ul class="password-requirements">
+        <li id="minLength" class="invalid">Pelo menos 8 caracteres</li>
+        <li id="uppercase" class="invalid">Pelo menos 1 letra maiúscula</li>
+        <li id="number" class="invalid">Pelo menos 1 número</li>
+      </ul>
+      
       <button type="submit">Register</button>
     </form>
 

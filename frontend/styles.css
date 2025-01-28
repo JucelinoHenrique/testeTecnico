@@ -99,3 +99,35 @@ button:hover {
   background: #d4edda;
   color: #155724;
 }
+
+.password-requirements {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.password-requirements li.invalid {
+  color: #d9534f; /* Vermelho para itens inválidos */
+}
+
+.password-requirements li.valid {
+  color: #5cb85c; /* Verde para itens válidos */
+}
+
+.password-requirements li::before {
+  content: "✖"; /* Ícone de erro */
+  margin-right: 8px;
+}
+
+.password-requirements li.valid::before {
+  content: "✔"; /* Ícone de sucesso */
+}
+

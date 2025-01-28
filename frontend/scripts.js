@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:3000/api/users";
 
-// Função para mostrar mensagens ao usuário
+
 const showMessage = (message, isError = true) => {
   const messageDiv = document.getElementById("message");
   messageDiv.className = isError ? "error" : "success";
@@ -12,7 +12,7 @@ const showMessage = (message, isError = true) => {
   }, 3000);
 };
 
-// Registro de usuário
+
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -31,19 +31,19 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     const data = await response.json();
 
     if (response.ok) {
-      // Mensagem de sucesso
+
       showMessage(data.message, false);
     } else {
-      // Mensagem de erro específica do backend
+ 
       showMessage(data.error || "Ocorreu um erro durante o registro.");
     }
   } catch (error) {
-    // Mensagem de erro em caso de falha no fetch ou backend indisponível
+   
     showMessage("Ocorreu um erro durante o registro.");
   }
 });
 
-// Login de usuário
+
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -62,15 +62,52 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (response.ok) {
-      // Usar a mensagem da API no alert
-      alert(data.message); // Exibe o sucesso no login
+      
+      alert(data.message); 
       showMessage(data.message, false);
     } else {
-      // Mensagem de erro específica do backend
+      
       showMessage(data.error || "Falha ao realizar o login.");
     }
   } catch (error) {
-    // Mensagem de erro em caso de falha no fetch ou backend indisponível
+   
     showMessage("Ocorreu um erro durante o login.");
   }
 });
+
+document.getElementById('registerPassword').addEventListener('input', (e) => {
+  const password = e.target.value;
+
+
+  const minLength = document.getElementById('minLength');
+  const uppercase = document.getElementById('uppercase');
+  const number = document.getElementById('number');
+
+
+  if (password.length >= 8) {
+    minLength.classList.add('valid');
+    minLength.classList.remove('invalid');
+  } else {
+    minLength.classList.add('invalid');
+    minLength.classList.remove('valid');
+  }
+
+ 
+  if (/[A-Z]/.test(password)) {
+    uppercase.classList.add('valid');
+    uppercase.classList.remove('invalid');
+  } else {
+    uppercase.classList.add('invalid');
+    uppercase.classList.remove('valid');
+  }
+
+  
+  if (/\d/.test(password)) {
+    number.classList.add('valid');
+    number.classList.remove('invalid');
+  } else {
+    number.classList.add('invalid');
+    number.classList.remove('valid');
+  }
+});
+
